@@ -1,0 +1,13 @@
+CREATE TABLE categoria (
+    id BIGSERIAL PRIMARY KEY,
+
+    nombre VARCHAR(100) NOT NULL,
+
+    descripcion TEXT,
+
+    estado BOOLEAN NOT NULL DEFAULT TRUE,
+
+    fecha_creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    fecha_modificacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
