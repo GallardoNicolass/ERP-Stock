@@ -1,0 +1,17 @@
+CREATE TABLE unidad_medida (
+
+    id BIGSERIAL PRIMARY KEY,
+
+    nombre VARCHAR(100) NOT NULL,
+
+    sigla VARCHAR(20) NOT NULL,
+
+    tipo VARCHAR(50) NOT NULL,
+
+    estado BOOLEAN NOT NULL DEFAULT TRUE,
+
+    fecha_creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    fecha_modificacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+);
