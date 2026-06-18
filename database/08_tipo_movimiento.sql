@@ -1,0 +1,19 @@
+CREATE TABLE tipo_movimiento (
+
+    id BIGSERIAL PRIMARY KEY,
+
+    codigo VARCHAR(20) NOT NULL UNIQUE,
+
+    nombre VARCHAR(100) NOT NULL UNIQUE,
+
+    descripcion TEXT,
+
+    afecta_stock BOOLEAN NOT NULL DEFAULT TRUE,
+
+    afecta_costo BOOLEAN NOT NULL DEFAULT FALSE,
+
+    estado BOOLEAN NOT NULL DEFAULT TRUE,
+
+    fecha_creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+);
