@@ -1,0 +1,13 @@
+CREATE TABLE metodo_pago (
+
+    id BIGSERIAL PRIMARY KEY,
+
+    nombre VARCHAR(100) NOT NULL UNIQUE,
+
+    descripcion TEXT,
+
+    estado BOOLEAN NOT NULL DEFAULT TRUE,
+
+    fecha_creacion TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+
+);
