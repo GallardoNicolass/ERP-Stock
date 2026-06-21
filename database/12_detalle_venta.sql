@@ -6,11 +6,19 @@ CREATE TABLE detalle_venta (
 
     producto_id BIGINT NOT NULL,
 
-    cantidad NUMERIC(12,2) NOT NULL CHECK (cantidad > 0),
+    cantidad NUMERIC(12,2)
+        NOT NULL
+        CHECK (cantidad > 0),
 
-    precio_unitario NUMERIC(12,2) NOT NULL CHECK (precio_unitario >= 0),
+    precio_unitario NUMERIC(12,2)
+        NOT NULL
+        CHECK (precio_unitario >= 0),
 
-    subtotal NUMERIC(12,2) NOT NULL CHECK (subtotal >= 0),
+    subtotal NUMERIC(12,2)
+        NOT NULL
+        CHECK (subtotal >= 0),
+
+    observacion TEXT,
 
     CONSTRAINT fk_detalle_venta
         FOREIGN KEY (venta_id)

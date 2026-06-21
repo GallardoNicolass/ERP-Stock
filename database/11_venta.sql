@@ -12,7 +12,17 @@ CREATE TABLE venta (
 
     total NUMERIC(12,2) NOT NULL CHECK (total >= 0),
 
-    estado VARCHAR(20) NOT NULL DEFAULT 'CONFIRMADA',
+    estado VARCHAR(20)
+        NOT NULL
+        DEFAULT 'CONFIRMADA'
+        CHECK (
+            estado IN (
+                'PENDIENTE',
+                'CONFIRMADA',
+                'CANCELADA',
+                'ANULADA'
+            )
+        ),
 
     observacion TEXT,
 
