@@ -4,21 +4,29 @@ CREATE TABLE movimiento_stock (
 
     producto_id BIGINT NOT NULL,
 
+    lote_id BIGINT,
+
     tipo_movimiento_id BIGINT NOT NULL,
 
-    cantidad NUMERIC(12,2) NOT NULL CHECK (cantidad > 0),
+    cantidad NUMERIC(12,2) NOT NULL
+        CHECK (cantidad > 0),
 
     precio_unitario NUMERIC(12,2),
 
     observacion TEXT,
 
-    fecha_movimiento TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    fecha_movimiento TIMESTAMP NOT NULL
+        DEFAULT CURRENT_TIMESTAMP,
 
     usuario_id BIGINT NOT NULL,
 
     CONSTRAINT fk_movimiento_producto
         FOREIGN KEY (producto_id)
         REFERENCES producto(id),
+
+    CONSTRAINT fk_movimiento_lote
+        FOREIGN KEY (lote_id)
+        REFERENCES lote(id),
 
     CONSTRAINT fk_movimiento_tipo
         FOREIGN KEY (tipo_movimiento_id)
